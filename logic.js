@@ -24,8 +24,9 @@ function checkData(){
 }
 function populateTables(){
     $.get('/api/tables').then((data)=>{
+        let count = 1;
         data.forEach(index =>{
-            let count = 1;
+           
             let lister = $('<h2 class="tableList">');
             lister.appendTo('#tableSection');
             lister.html(`${count} | ${index.name}`);
@@ -34,11 +35,13 @@ function populateTables(){
         });
     });
     $.get('/api/waitlist').then((data)=>{
+        let count = 1;
         data.forEach(index =>{
-            let count = 1;
+            
             let resPlace = $('<h2 class="waitlist">');
             resPlace.appendTo('#waitlistSection');
             resPlace.html(`${count} | ${index.name}`);
+            count++
 
         });
 
