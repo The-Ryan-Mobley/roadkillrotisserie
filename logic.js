@@ -4,6 +4,11 @@ $(window).on('load',()=>{
 
     $('#sub-btn').on('click',(event)=>{
         event.preventDefault();
+        var newName = $('#reserve_name').val().trim();
+        var newPhone = $('#reserve_phone').val().trim();
+        var newEmail = $('#reserve_email').val().trim();
+        var newID = $('#reserve_uniqueID').val().trim();
+        if((newName)&&(newPhone)&&(newEmail)&&(newID)){
         let newRes={
             name: $('#reserve_name').val().trim(),
             phone: $('#reserve_phone').val().trim(),
@@ -18,6 +23,12 @@ $(window).on('load',()=>{
         $('#reserve_email').val('');
         $('#reserve_uniqueID').val('');
         window.location.href='/tables';
+            }
+        else {
+            console.log("MODAL TIME");
+        $('.modal').modal();
+        $('.modal').modal('open');
+        }
 
 
     });
