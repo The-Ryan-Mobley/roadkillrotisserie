@@ -38,11 +38,13 @@ module.exports = (app)=>{
         //console.log(req.body);
         var newRes = req.body;
         newRes.routeName = newRes.name.replace(/\s+/g, "").toLowerCase();
-        if(table.tables.length < 5){
-            table.tables.push(newRes);
-        }
-        else{
-            table.reservations.push(newRes);
+        if(newRes !== undefined){
+            if(table.tables.length < 5){
+                table.tables.push(newRes);
+            }
+            else{
+                table.reservations.push(newRes);
+            }
         }
         res.json(newRes);
         console.log('success'+table);

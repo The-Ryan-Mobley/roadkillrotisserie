@@ -13,6 +13,11 @@ $(window).on('load',()=>{
         $.post('/api/tables', newRes).then((data)=>{
             console.log('sending '+data);
         });
+        $('#reserve_name').val('');
+        $('#reserve_phone').val('');
+        $('#reserve_email').val('');
+        $('#reserve_uniqueID').val('');
+
 
     });
 
