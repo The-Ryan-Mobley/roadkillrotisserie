@@ -1,5 +1,6 @@
 $(window).on('load',()=>{
     checkData();
+    populateTables();
 
     $('#sub-btn').on('click',(event)=>{
         event.preventDefault();
