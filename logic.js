@@ -34,8 +34,10 @@ function populateTables(){
     });
     $.get('/api/waitlist').then((data)=>{
         data.forEach(index =>{
+            let count = 1;
             let resPlace = $('<h2 class="waitlist">');
-            
+            resPlace.appendTo('#waitlistSection');
+            resPlace.html(`${count} | ${index.name}`);
 
         });
 
