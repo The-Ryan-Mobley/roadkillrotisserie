@@ -10,10 +10,10 @@ $(window).on('load',()=>{
         var newID = $('#reserve_uniqueID').val().trim();
         if((newName)&&(newPhone)&&(newEmail)&&(newID)){
         let newRes={
-            name: $('#reserve_name').val().trim(),
-            phone: $('#reserve_phone').val().trim(),
-            email: $('#reserve_email').val().trim(),
-            id: $('#reserve_uniqueID').val().trim()
+            name: newName,
+            phone: newPhone,
+            email: newEmail,
+            id: newID
         };
         $.post('/api/tables', newRes).then((data)=>{
             console.log('sending '+data);
