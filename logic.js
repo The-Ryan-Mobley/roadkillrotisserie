@@ -17,6 +17,7 @@ $(window).on('load',()=>{
         $('#reserve_phone').val('');
         $('#reserve_email').val('');
         $('#reserve_uniqueID').val('');
+        window.location.href='/tables';
 
 
     });
